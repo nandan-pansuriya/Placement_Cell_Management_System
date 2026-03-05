@@ -40,4 +40,38 @@ public class UserDAO {
 
         return user; // null if login fails
     }
+
+    public int insertUser(String username, String password, String role) {
+
+        int userId = -1;
+
+        String sql = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
+
+        try (
+                Connection con = DBConnection.getConnection(); 
+                PreparedStatement ps = con.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)
+            ) 
+        {
+
+            ps.setString(1, username);
+            ps.setString(2, password);
+            ps.setString(3, role);
+
+            int rows = ps.executeUpdate();
+
+            if (rows > 0) {
+
+                ResultSet rs = ps.getGeneratedKeys();
+
+                if (rs.next()) {
+                    userId = rs.getInt(1); // get auto generated user_id
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return userId;
+    }
 }
