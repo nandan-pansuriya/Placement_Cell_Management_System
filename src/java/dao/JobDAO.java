@@ -56,6 +56,7 @@ public class JobDAO {
 
                 job.setJobId(rs.getInt("job_id"));
                 job.setCompanyId(rs.getInt("company_id"));
+                job.setCompanyName(rs.getString("company_name"));
                 job.setJobTitle(rs.getString("job_title"));
                 job.setJobDescription(rs.getString("job_description"));
                 job.setSalary(rs.getDouble("salary"));
