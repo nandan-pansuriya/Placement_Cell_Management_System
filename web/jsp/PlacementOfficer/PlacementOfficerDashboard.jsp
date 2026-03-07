@@ -19,8 +19,11 @@
         <hr>
 
         <h3>Job Management</h3>
-        <a href="#">Post Job</a><br>
-        <a href="#">View Jobs</a>
+
+        <a href="${pageContext.request.contextPath}/JobServlet?action=addForm">
+            Post Job</a><br>
+        <a href="${pageContext.request.contextPath}/JobServlet?action=list">
+            View Jobs</a>
 
         <hr>
 
