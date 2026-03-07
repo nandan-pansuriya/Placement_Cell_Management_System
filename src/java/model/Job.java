@@ -9,6 +9,7 @@ public class Job implements Serializable {
     private int companyId;
     private String jobTitle;
     private String jobDescription;
+    private String companyName;
     private double salary;
     private double eligibilityCgpa;
     private Date lastDate;
@@ -46,6 +47,14 @@ public class Job implements Serializable {
 
     public void setJobDescription(String jobDescription) {
         this.jobDescription = jobDescription;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     public double getSalary() {
