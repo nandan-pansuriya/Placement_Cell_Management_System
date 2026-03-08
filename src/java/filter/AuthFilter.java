@@ -14,8 +14,8 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebFilter(urlPatterns = {
-        "/jsp/student/*",
-        "/jsp/officer/*"
+        "/jsp/Student/*",
+        "/jsp/PlacementOfficer/*"
 })
 public class AuthFilter implements Filter {
 
