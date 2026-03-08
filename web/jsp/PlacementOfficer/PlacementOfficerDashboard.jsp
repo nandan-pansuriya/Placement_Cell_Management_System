@@ -27,17 +27,19 @@
 
         <hr>
 
-        <h3>Applications</h3>
-        <a href="#">View Applications</a>
+        <a href="${pageContext.request.contextPath}/ApplicationServlet?action=list">
+            View Applications
+        </a>
 
         <hr>
 
-        <h3>Profile</h3>
-        <a href="#">My Profile</a>
+        <a href="${pageContext.request.contextPath}/PlacementOfficerServlet?action=profile">
+            My Profile
+        </a>
 
         <hr>
 
-        <a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a>
+        <a href="${pageContext.request.contextPath}/logout">Logout</a>
 
     </body>
 </html>
